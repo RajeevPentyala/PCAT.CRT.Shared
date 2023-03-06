@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ILRepack.2.0.15\build\ILRepack.props" Condition="Exists('..\packages\ILRepack.2.0.15\build\ILRepack.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91C27DFA-F736-4F55-B58A-9A76434E0DA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Net.Formulas.Tools</RootNamespace>
+    <AssemblyName>Net.Formulas.Tools</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FriendAssemblies.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.0.68\lib\net462\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.9.0.2.25\lib\net462\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.9.0.2.25\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.0.68\lib\net462\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\DataverseLib\AppCheckerResult.cs">
+      <Link>DataverseLib\AppCheckerResult.cs</Link>
+    </Compile>
+    <Compile Include="..\DataverseLib\DataverseFileColumnLoader.cs">
+      <Link>DataverseLib\DataverseFileColumnLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\DataverseLib\DataverseOperator.cs">
+      <Link>DataverseLib\DataverseOperator.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CanvasDocument.cs" />
+    <Compile Include="Checksum\ChecksumMaker.cs" />
+    <Compile Include="Checksum\IHashMaker.cs" />
+    <Compile Include="Classes\CustomisationSolution.cs" />
+    <Compile Include="Classes\MasppLoader.cs" />
+    <Compile Include="Classes\SarifExporter.cs" />
+    <Compile Include="ControlTemplates\CommonControlProperties.cs" />
+    <Compile Include="ControlTemplates\ControlMetadataXNames.cs" />
+    <Compile Include="ControlTemplates\ControlProperty.cs" />
+    <Compile Include="ControlTemplates\ControlTemplate.cs" />
+    <Compile Include="ControlTemplates\ControlTemplateParser.cs" />
+    <Compile Include="ControlTemplates\DynamicProperties.cs" />
+    <Compile Include="ControlTemplates\GlobalTemplates.cs" />
+    <Compile Include="DataverseLib\BulkDelete.cs" />
+    <Compile Include="DataverseLib\DataAccessLogic.cs" />
+    <Compile Include="EditorState\CombinedTemplateState.cs" />
+    <Compile Include="EditorState\ControlState.cs" />
+    <Compile Include="EditorState\DynamicPropertyState.cs" />
+    <Compile Include="EditorState\EditorStateStore.cs" />
+    <Compile Include="EditorState\PropertyState.cs" />
+    <Compile Include="EditorState\TemplateStore.cs" />
+    <Compile Include="Entropy.cs" />
+    <Compile Include="Flatten\LinqExtensions.cs" />
+    <Compile Include="IR\IRNode.cs" />
+    <Compile Include="IR\IRNodeVisitor.cs" />
+    <Compile Include="IR\IRStateHelpers.cs" />
+    <Compile Include="IR\UniqueIdRestorer.cs" />
+    <Compile Include="MsAppTest.cs" />
+    <Compile Include="PAConvert\DocumentException.cs" />
+    <Compile Include="PAConvert\Error.cs" />
+    <Compile Include="PAConvert\ErrorCode.cs" />
+    <Compile Include="PAConvert\ErrorContainer.cs" />
+    <Compile Include="PAConvert\PAConstants.cs" />
+    <Compile Include="PAConvert\Parser\CharacterUtils.cs" />
+    <Compile Include="PAConvert\Parser\Parser.cs" />
+    <Compile Include="PAConvert\Parser\SourceLocation.cs" />
+    <Compile Include="PAConvert\PAWriterVisitor.cs" />
+    <Compile Include="PAConvert\Yaml\YamlConverter.cs" />
+    <Compile Include="PAConvert\Yaml\YamlLexer.cs" />
+    <Compile Include="PAConvert\Yaml\YamlWriter.cs" />
+    <Compile Include="Pluggin\AppCheckerResultsProcessingPlugin.cs" />
+    <Compile Include="Pluggin\AppSettingsProcessingPlugin.cs" />
+    <Compile Include="Pluggin\AutoFailProcessPlugin.cs" />
+    <Compile Include="Pluggin\CodeAutoFailProcessPlugin.cs" />
+    <Compile Include="Pluggin\ControlProcessingPluggin.cs" />
+    <Compile Include="Pluggin\PatternRefreshAPI.cs" />
+    <Compile Include="Pluggin\VariablesProcessingPlugin.cs" />
+    <Compile Include="Pluggin\DataSourcesProcessingPlugin.cs" />
+    <Compile Include="Pluggin\Pluggin_ManageSolutionImport.cs" />
+    <Compile Include="Pluggin\MediaFilesProcessingplugin.cs" />
+    <Compile Include="Pluggin\Pluggin_API_LoadNewApp.cs" />
+    <Compile Include="Pluggin\Pluggin_API_SendRepport.cs" />
+    <Compile Include="Pluggin\PurgeProcessingPluggin.cs" />
+    <Compile Include="Pluggin\ReviewItemsProcessingPlugin.cs" />
+    <Compile Include="Pluggin\ScreensProcessingPlugin.cs" />
+    <Compile Include="Schemas\adhoc\AppCheckerResultJson.cs" />
+    <Compile Include="Schemas\adhoc\AppInsightsKey.cs" />
+    <Compile Include="Schemas\adhoc\CanvasManifestJson.cs" />
+    <Compile Include="Schemas\adhoc\ChecksumJson.cs" />
+    <Compile Include="Schemas\adhoc\ComponentDependencyInfo.cs" />
+    <Compile Include="Schemas\adhoc\ComponentsMetadataJson.cs" />
+    <Compile Include="Schemas\adhoc\Connections.cs" />
+    <Compile Include="Schemas\adhoc\Control.cs" />
+    <Compile Include="Schemas\adhoc\CustomPropertyJson.cs" />
+    <Compile Include="Schemas\adhoc\DataSources.cs" />
+    <Compile Include="Schemas\adhoc\TemplateMetadataJson.cs" />
+    <Compile Include="Schemas\BuildVerJson.cs" />
+    <Compile Include="Schemas\ComponentType.cs" />
+    <Compile Include="Schemas\Converters\JsonDateTimeConverter.cs" />
+    <Compile Include="Schemas\Converters\JsonNullableDateTimeConverter.cs" />
+    <Compile Include="Schemas\Converters\JsonVersionConverter.cs" />
+    <Compile Include="Schemas\DataComponentDefinitionJson.cs" />
+    <Compile Include="Schemas\DocumentPropertiesJson.cs" />
+    <Compile Include="Schemas\HeaderJson.cs" />
+    <Compile Include="Schemas\LocalResourceInfo.cs" />
+    <Compile Include="Schemas\PcfControls\AuthConfigProperty.cs" />
+    <Compile Include="Schemas\PcfControls\DataConnectorMetadata.cs" />
+    <Compile Include="Schemas\PcfControls\EnumValues.cs" />
+    <Compile Include="Schemas\PcfControls\Event.cs" />
+    <Compile Include="Schemas\PcfControls\PcfControl.cs" />
+    <Compile Include="Schemas\PcfControls\PcfControlDoublyEncoded.cs" />
+    <Compile Include="Schemas\PcfControls\PorpertyDependency.cs" />
+    <Compile Include="Schemas\PcfControls\Property.cs" />
+    <Compile Include="Schemas\PcfControls\Resource.cs" />
+    <Compile Include="Schemas\PropertyDataType.cs" />
+    <Compile Include="Schemas\PublishInfoJson.cs" />
+    <Compile Include="Schemas\ResourcesJson.cs" />
+    <Compile Include="Schemas\TemplatesJson.cs" />
+    <Compile Include="Schemas\ThemeJson.cs" />
+    <Compile Include="Serializers\DefaultRuleHelper.cs" />
+    <Compile Include="Serializers\FileEntry.cs" />
+    <Compile Include="Serializers\MsAppSerializer.cs" />
+    <Compile Include="Serializers\SourceSerializer.cs" />
+    <Compile Include="Serializers\TransformLogo.cs" />
+    <Compile Include="Serializers\TransformResourceJson.cs" />
+    <Compile Include="Solution\Solution.cs" />
+    <Compile Include="SourceFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SourceTransforms\AppTestTransform.cs" />
+    <Compile Include="SourceTransforms\ComponentDefinitionTransform.cs" />
+    <Compile Include="SourceTransforms\ComponentInstanceTransform.cs" />
+    <Compile Include="SourceTransforms\DefaultValuesTransform.cs" />
+    <Compile Include="SourceTransforms\GalleryTemplateTransform.cs" />
+    <Compile Include="SourceTransforms\GroupControlTransform.cs" />
+    <Compile Include="SourceTransforms\IControlTemplateTransform.cs" />
+    <Compile Include="SourceTransforms\SourceTransformer.cs" />
+    <Compile Include="SystemTextJson\ArrayBufferWriter.cs" />
+    <Compile Include="SystemTextJson\BitStack.cs" />
+    <Compile Include="SystemTextJson\Collections\StackExtensions.netstandard.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.DbRow.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.MetadataDb.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.Parse.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.StackRow.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.StackRowStack.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocument.TryGetProperty.cs" />
+    <Compile Include="SystemTextJson\Document\JsonDocumentOptions.cs" />
+    <Compile Include="SystemTextJson\Document\JsonElement.ArrayEnumerator.cs" />
+    <Compile Include="SystemTextJson\Document\JsonElement.cs" />
+    <Compile Include="SystemTextJson\Document\JsonElement.ObjectEnumerator.cs" />
+    <Compile Include="SystemTextJson\Document\JsonProperty.cs" />
+    <Compile Include="SystemTextJson\Document\JsonValueKind.cs" />
+    <Compile Include="SystemTextJson\JsonCommentHandling.cs" />
+    <Compile Include="SystemTextJson\JsonConstants.cs" />
+    <Compile Include="SystemTextJson\JsonEncodedText.cs" />
+    <Compile Include="SystemTextJson\JsonException.cs" />
+    <Compile Include="SystemTextJson\JsonHelpers.cs" />
+    <Compile Include="SystemTextJson\JsonHelpers.Date.cs" />
+    <Compile Include="SystemTextJson\JsonTokenType.cs" />
+    <Compile Include="SystemTextJson\Node\DuplicatePropertyNameHandlingStrategy.cs" />
+    <Compile Include="SystemTextJson\Node\JsonArray.cs" />
+    <Compile Include="SystemTextJson\Node\JsonArrayEnumerator.cs" />
+    <Compile Include="SystemTextJson\Node\JsonBoolean.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNode.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNode.RecursionStackFrame.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNode.Traversal.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNode.TraversalHelpers.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNodeOptions.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNull.cs" />
+    <Compile Include="SystemTextJson\Node\JsonNumber.cs" />
+    <Compile Include="SystemTextJson\Node\JsonObject.cs" />
+    <Compile Include="SystemTextJson\Node\JsonObjectEnumerator.cs" />
+    <Compile Include="SystemTextJson\Node\JsonObjectProperty.cs" />
+    <Compile Include="SystemTextJson\Node\JsonString.cs" />
+    <Compile Include="SystemTextJson\Reader\ConsumeNumberResult.cs" />
+    <Compile Include="SystemTextJson\Reader\ConsumeTokenResult.cs" />
+    <Compile Include="SystemTextJson\Reader\JsonReaderException.cs" />
+    <Compile Include="SystemTextJson\Reader\JsonReaderHelper.cs" />
+    <Compile Include="SystemTextJson\Reader\JsonReaderHelper.Unescaping.cs" />
+    <Compile Include="SystemTextJson\Reader\JsonReaderOptions.cs" />
+    <Compile Include="SystemTextJson\Reader\JsonReaderState.cs" />
+    <Compile Include="SystemTextJson\Reader\Utf8JsonReader.cs" />
+    <Compile Include="SystemTextJson\Reader\Utf8JsonReader.MultiSegment.cs" />
+    <Compile Include="SystemTextJson\Reader\Utf8JsonReader.TryGet.cs" />
+    <Compile Include="SystemTextJson\Serialization\ClassType.cs" />
+    <Compile Include="SystemTextJson\Serialization\ConverterList.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\DefaultArrayConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\DefaultEnumerableConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\DefaultImmutableDictionaryConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\DefaultImmutableEnumerableConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\EnumConverterOptions.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonConverterEnum.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonKeyValuePairConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterBoolean.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterByte.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterByteArray.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterChar.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterDateTime.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterDateTimeOffset.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterDecimal.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterDouble.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterEnum.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterGuid.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterInt16.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterInt32.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterInt64.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterJsonElement.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterKeyValuePair.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterObject.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterSByte.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterSingle.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterString.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterUInt16.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterUInt32.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterUInt64.cs" />
+    <Compile Include="SystemTextJson\Serialization\Converters\JsonValueConverterUri.cs" />
+    <Compile Include="SystemTextJson\Serialization\DefaultIDictionaryConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\ExtensionDataWriteStatus.cs" />
+    <Compile Include="SystemTextJson\Serialization\ImmutableCollectionCreator.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonAttribute.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonCamelCaseNamingPolicy.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonClassInfo.AddProperty.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonClassInfo.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonConverterAttribute.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonConverterFactory.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonConverterOfT.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonDefaultNamingPolicy.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonDictionaryConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonEnumerableConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonExtensionDataAttribute.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonIgnoreAttribute.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonNamingPolicy.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonPropertyInfo.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonPropertyInfoCommon.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonPropertyInfoNotNullable.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonPropertyInfoNotNullableContravariant.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonPropertyInfoNullable.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonPropertyNameAttribute.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.HandleArray.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.HandleDictionary.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.HandleNull.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.HandleObject.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.HandlePropertyName.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.HandleValue.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.Helpers.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.Span.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.Stream.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.String.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Read.Utf8JsonReader.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.ByteArray.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.HandleDictionary.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.HandleEnumerable.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.HandleObject.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.Helpers.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.Stream.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.String.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializer.Write.Utf8JsonWriter.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializerOptions.Converters.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonSerializerOptions.cs" />
+    <Compile Include="SystemTextJson\Serialization\JsonStringEnumConverter.cs" />
+    <Compile Include="SystemTextJson\Serialization\MemberAccessor.cs" />
+    <Compile Include="SystemTextJson\Serialization\PooledByteBufferWriter.cs" />
+    <Compile Include="SystemTextJson\Serialization\PropertyRef.cs" />
+    <Compile Include="SystemTextJson\Serialization\ReadStack.cs" />
+    <Compile Include="SystemTextJson\Serialization\ReadStackFrame.cs" />
+    <Compile Include="SystemTextJson\Serialization\ReflectionEmitMemberAccessor.cs" />
+    <Compile Include="SystemTextJson\Serialization\ReflectionMemberAccessor.cs" />
+    <Compile Include="SystemTextJson\Serialization\WriteStack.cs" />
+    <Compile Include="SystemTextJson\Serialization\WriteStackFrame.cs" />
+    <Compile Include="SystemTextJson\ThrowHelper.cs" />
+    <Compile Include="SystemTextJson\ThrowHelper.Serialization.cs" />
+    <Compile Include="SystemTextJson\Writer\JsonWriterHelper.cs" />
+    <Compile Include="SystemTextJson\Writer\JsonWriterHelper.Date.cs" />
+    <Compile Include="SystemTextJson\Writer\JsonWriterHelper.Escaping.cs" />
+    <Compile Include="SystemTextJson\Writer\JsonWriterHelper.Transcoding.cs" />
+    <Compile Include="SystemTextJson\Writer\JsonWriterOptions.cs" />
+    <Compile Include="SystemTextJson\Writer\SequenceValidity.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Bytes.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.DateTime.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.DateTimeOffset.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Decimal.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Double.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Float.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.FormattedNumber.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Guid.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Helpers.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.Literal.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.SignedNumber.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.String.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteProperties.UnsignedNumber.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Bytes.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Comment.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.DateTime.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.DateTimeOffset.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Decimal.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Double.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Float.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.FormattedNumber.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Guid.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Helpers.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.Literal.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.SignedNumber.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.String.cs" />
+    <Compile Include="SystemTextJson\Writer\Utf8JsonWriter.WriteValues.UnsignedNumber.cs" />
+    <Compile Include="Themes\Theme.cs" />
+    <Compile Include="Utility\ControlPath.cs" />
+    <Compile Include="Utility\DirectoryHelper.cs" />
+    <Compile Include="Utility\FilePath.cs" />
+    <Compile Include="Utility\ICloneable.cs" />
+    <Compile Include="Utility\JsonNormalizer.cs" />
+    <Compile Include="Utility\LazyList.cs" />
+    <Compile Include="Utility\TempFile.cs" />
+    <Compile Include="Utility\Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="FriendAssemblies.snk" />
+    <None Include="packages.config" />
+    <None Include="PAConvert\Yaml\ReadMe.md" />
+    <None Include="Schemas\readme.md" />
+    <None Include="Themes\DefaultTheme.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ControlTemplates\commonStyleProperties.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ILRepack.2.0.15\build\ILRepack.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.2.0.15\build\ILRepack.props'))" />
+  </Target>
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetPath)" />
+      <!--<InputAssemblies Include="$(TargetPath)" />
+			 Framework -->
+      <InputAssemblies Include="$(TargetDir)System.Text.Encodings.Web.dll" />
+      <InputAssemblies Include="$(TargetDir)Net.Formulas.Tools.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Memory.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.CompilerServices.Unsafe.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Buffers.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Numerics.Vectors.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Bcl.AsyncInterfaces.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.Tasks.Extensions.dll" />
+    </ItemGroup>
+    <ItemGroup>
+      <KeyFile Include="$(ProjectDir)FriendAssemblies.snk" />
+    </ItemGroup>
+    <Exec Command="$(ILRepack) /keyfile:@(KeyFile) /parallel /out:$(TargetPath) /lib:$(TargetDir) @(InputAssemblies -> '%(Identity)', ' ')" />
+  </Target>
+</Project>

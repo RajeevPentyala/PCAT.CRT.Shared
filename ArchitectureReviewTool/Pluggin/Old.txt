@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ILRepack.2.0.18\build\ILRepack.props" Condition="Exists('..\packages\ILRepack.2.0.18\build\ILRepack.props')" />
+  <Import Project="..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.props" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.props')" />
+  <Import Project="..\packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('..\packages\ILMerge.3.0.41\build\ILMerge.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E51EA01-083A-4CF7-8EE9-CDD21BF87BEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.PowerPlatform.PowerCAT.Tools</RootNamespace>
+    <AssemblyName>Microsoft.PowerPlatform.PowerCAT.Tools</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FriendAssemblies.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.0.7\lib\net452\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.0.7\lib\net452\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment">
+      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.9.0.2.29\lib\net462\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.0.68\lib\net462\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Niam.XRM.Framework, Version=9.0.0.1, Culture=neutral, PublicKeyToken=95ffda3bd4333fd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Niam.XRM.Framework.9.0.0.1\lib\net462\Niam.XRM.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeViewerPluggin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CdsLoaderKey.pfx" />
+    <None Include="FriendAssemblies.snk" />
+    <None Include="ILMerge.props" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataverseLib\DataverseLib.csproj">
+      <Project>{40fd1194-4b92-459e-996e-34d2cf48aac2}</Project>
+      <Name>DataverseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PAModel\Microsoft.PowerPlatform.Formulas.Tools.csproj">
+      <Project>{502f2996-1843-4f4c-b5f5-3a5f0d26114d}</Project>
+      <Name>Microsoft.PowerPlatform.Formulas.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ILMergeOrder.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetPath)" />
+      <!-- Framework -->
+      <InputAssemblies Include="$(TargetDir)Niam.XRM.Framework.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.PowerPlatform.Formulas.Tools.dll" />
+      <InputAssemblies Include="$(TargetDir)DataverseLib.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Xrm.Tooling.Connector.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Crm.Sdk.Proxy.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Xrm.Sdk.Deployment.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Xrm.Sdk.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Win32.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)netstandard.dll" />
+      <InputAssemblies Include="$(TargetDir)System.AppContext.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Collections.Concurrent.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Collections.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Collections.NonGeneric.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Collections.Specialized.dll" />
+      <InputAssemblies Include="$(TargetDir)System.ComponentModel.dll" />
+      <InputAssemblies Include="$(TargetDir)System.ComponentModel.EventBasedAsync.dll" />
+      <InputAssemblies Include="$(TargetDir)System.ComponentModel.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.ComponentModel.TypeConverter.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Console.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Data.Common.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.Contracts.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.Debug.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.FileVersionInfo.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.Process.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.StackTrace.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.TextWriterTraceListener.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.Tools.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.TraceSource.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Diagnostics.Tracing.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Drawing.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Dynamic.Runtime.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Globalization.Calendars.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Globalization.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Globalization.Extensions.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.Compression.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.Compression.ZipFile.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.FileSystem.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.FileSystem.DriveInfo.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.FileSystem.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.FileSystem.Watcher.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.IsolatedStorage.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.MemoryMappedFiles.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.Pipes.dll" />
+      <InputAssemblies Include="$(TargetDir)System.IO.UnmanagedMemoryStream.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Linq.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Linq.Expressions.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Linq.Parallel.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Linq.Queryable.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.Http.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.NameResolution.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.NetworkInformation.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.Ping.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.Requests.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.Security.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.Sockets.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.WebHeaderCollection.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.WebSockets.Client.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Net.WebSockets.dll" />
+      <InputAssemblies Include="$(TargetDir)System.ObjectModel.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Reflection.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Reflection.Extensions.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Reflection.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Resources.Reader.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Resources.ResourceManager.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Resources.Writer.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.CompilerServices.VisualC.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Extensions.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Handles.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.InteropServices.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.InteropServices.RuntimeInformation.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Numerics.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Serialization.Formatters.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Serialization.Json.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Serialization.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Runtime.Serialization.Xml.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Claims.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Cryptography.Algorithms.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Cryptography.Csp.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Cryptography.Encoding.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Cryptography.Primitives.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Cryptography.X509Certificates.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.Principal.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Security.SecureString.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Text.Encoding.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Text.Encoding.Extensions.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Text.RegularExpressions.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.Overlapped.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.Tasks.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.Tasks.Parallel.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.Thread.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.ThreadPool.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Threading.Timer.dll" />
+      <InputAssemblies Include="$(TargetDir)System.ValueTuple.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Xml.ReaderWriter.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Xml.XDocument.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Xml.XmlDocument.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Xml.XmlSerializer.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Xml.XPath.dll" />
+      <InputAssemblies Include="$(TargetDir)System.Xml.XPath.XDocument.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.Rest.ClientRuntime.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+      <InputAssemblies Include="$(TargetDir)Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll" />
+    </ItemGroup>
+    <ItemGroup>
+      <KeyFile Include="$(ProjectDir)FriendAssemblies.snk" />
+    </ItemGroup>
+    <Exec Command="$(ILRepack) /keyfile:@(KeyFile) /parallel /out:$(TargetPath) /lib:$(TargetDir) @(InputAssemblies -> '%(Identity)', ' ')" />
+  </Target>
+</Project>

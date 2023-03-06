@@ -1,0 +1,17 @@
+{
+  "tool": "Credential Scanner",
+  "suppressions": [
+    {
+      "placeholder": "HQ4a8~5mVm~Q0rZ.EAOz549S-8xZ66k_.F=",
+      "_justification": "This is a client secret used in accessing CDS"
+    },
+    {
+      "file": "/ArchitectureReviewTool/CodeViewerExtractor/App.config",
+      "_justification": "A synthetic key file used by the mqtt-broker tests"
+    },
+    {
+      "file": "/ArchitectureReviewTool/Pluggin/CdsLoaderKey.pfx",
+      "_justification": "A synthetic key file used by the mqtt-broker tests"
+    }
+  ]
+}
